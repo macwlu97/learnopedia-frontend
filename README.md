@@ -1,1 +1,1 @@
-# long-tail-chain-platform-
+# long-tail-chain-platform
