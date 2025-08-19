@@ -1,17 +1,10 @@
 <table>
-    <thead>
-      <tr>
-        <th>Chain</th>
-        <th>Block Height</th>
-        <th>Tx Count</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let block of blocks">
-        <td>{{ block.chain }}</td>
-        <td>{{ block.blockHeight }}</td>
-        <td>{{ block.txCount }}</td>
-      </tr>
-    </tbody>
-  </table>
-  
+  <tr>
+    <th>Block Number</th>
+    <th>Fetched At</th>
+  </tr>
+  <tr *ngFor="let block of blocks">
+    <td>{{ block.blockNumber }}</td>
+    <td>{{ block.fetchedAt | date:'short' }}</td>
+  </tr>
+</table>

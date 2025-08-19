@@ -1,20 +1,21 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { BlockInfo } from '../models/block-info.model';
+import { Observable } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({
+  providedIn: 'root'
+})
 export class BlockDataService {
-  private baseUrl = 'http://localhost:8080/api'; // Zakładamy lokalny backend
+  private readonly apiUrl = 'http://localhost:8081/api/blocks'; // zmień port jeśli trzeba
 
   constructor(private http: HttpClient) {}
 
-  getCurrentBlocks(): Observable<any> {
-    return  of(null);
-    // return this.http.get(`${this.baseUrl}/blocks`);
+  getBlocks(): Observable<BlockInfo[]> {
+    return this.http.get<BlockInfo[]>(this.apiUrl);
   }
 
-  getStats(): Observable<any> {
-    return  of(null);
-    // return this.http.get(`${this.baseUrl}/stats`);
+  getBlockById(id: string): Observable<BlockInfo> {
+    return this.http.get<BlockInfo>(`${this.apiUrl}/${id}`);
   }
 }
