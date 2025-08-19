@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PagesRoutingModule } from './pages-routing.module';
-import { BlockTableComponent } from './block-table/block-table.component';
+import { ArticleComponent } from './article/article.component';
 
 @NgModule({
-  // declarations: [BlockTableComponent],
+  declarations: [ArticleComponent],
   imports: [
     CommonModule,
     PagesRoutingModule,

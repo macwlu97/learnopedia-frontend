@@ -1,0 +1,22 @@
+<!-- Import from Wikipedia -->
+<div>
+  <input #titleInput type="text" placeholder="Article title">
+  <button (click)="importArticle(titleInput.value)">Import from Wikipedia</button>
+</div>
+
+<!-- Fetch article by ID -->
+<div>
+  <input #idInput type="text" placeholder="Article UUID">
+  <button (click)="fetchArticle(idInput.value)">Fetch article</button>
+</div>
+
+<!-- Display article -->
+<div *ngIf="article as a">
+  <h2>{{ a.title }}</h2>
+  <p>{{ a.content }}</p>
+  <small>ID: {{ a.id }}</small>
+</div>
+
+<!-- Loading / Errors -->
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error" style="color:red">{{ error }}</div>

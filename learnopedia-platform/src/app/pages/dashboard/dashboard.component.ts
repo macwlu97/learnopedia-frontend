@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BlockDataService } from '../../services/block-data.service';
-
+import { ArticleDataService } from '../../services/article.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +8,7 @@ import { BlockDataService } from '../../services/block-data.service';
 export class DashboardComponent implements OnInit {
   stats: any;
 
-  constructor(private blockService: BlockDataService) {}
+  constructor(private articleDataService: ArticleDataService) {}
 
   ngOnInit(): void {
     // this.blockService.getStats().subscribe(data => {

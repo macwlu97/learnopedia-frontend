@@ -1,9 +1,15 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { BlockTableComponent } from './pages/block-table/block-table.component';
+import { ArticleComponent } from './pages/article/article.component';
 
 export const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'blocks', component: BlockTableComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
+  { path: '', redirectTo: 'articles', pathMatch: 'full' },
+  { path: 'articles', component: ArticleComponent },
+  { path: 'articles/:id', component: ArticleComponent }
+  // { path: 'article', component: ArticleComponent },
+  // { path: '', redirectTo: '/articles', pathMatch: 'full' },
+  // { path: '**', redirectTo: '/articles' },
+
+  // { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
