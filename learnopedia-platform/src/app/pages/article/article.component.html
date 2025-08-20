@@ -1,22 +1,40 @@
-<!-- Import from Wikipedia -->
-<div>
-  <input #titleInput type="text" placeholder="Article title">
-  <button (click)="importArticle(titleInput.value)">Import from Wikipedia</button>
-</div>
+<!-- Input: Import from Wikipedia -->
+<mat-card class="input-card">
+  <mat-form-field appearance="outline" class="flex-grow">
+    <mat-label>Article title</mat-label>
+    <input matInput #titleInput>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="importArticle(titleInput.value)">
+    Import
+  </button>
+</mat-card>
 
-<!-- Fetch article by ID -->
-<div>
-  <input #idInput type="text" placeholder="Article UUID">
-  <button (click)="fetchArticle(idInput.value)">Fetch article</button>
-</div>
+<!-- Input: Fetch article by ID -->
+<mat-card class="input-card">
+  <mat-form-field appearance="outline" class="flex-grow">
+    <mat-label>Article UUID</mat-label>
+    <input matInput #idInput>
+  </mat-form-field>
+  <button mat-raised-button color="accent" (click)="fetchArticle(idInput.value)">
+    Fetch
+  </button>
+</mat-card>
+
+<!-- Loading spinner -->
+<mat-card *ngIf="loading" class="status-card">
+  <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
+  <div>Loading...</div>
+</mat-card>
+
+<!-- Error message -->
+<mat-card *ngIf="error" class="status-card error">
+  {{ error }}
+</mat-card>
 
 <!-- Display article -->
-<div *ngIf="article as a">
+<mat-card *ngIf="article as a" class="article-card">
   <h2>{{ a.title }}</h2>
   <p>{{ a.content }}</p>
+  <mat-divider></mat-divider>
   <small>ID: {{ a.id }}</small>
-</div>
-
-<!-- Loading / Errors -->
-<div *ngIf="loading">Loading...</div>
-<div *ngIf="error" style="color:red">{{ error }}</div>
+</mat-card>

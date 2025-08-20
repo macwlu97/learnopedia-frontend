@@ -1,0 +1,51 @@
+.input-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  
+    .flex-grow {
+      flex: 1;
+      min-width: 200px;
+    }
+  }
+  
+  .article-card {
+    margin: 1rem 0;
+    padding: 1.5rem;
+    background: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  
+    h2 {
+      margin-bottom: 0.5rem;
+      color: #1a237e; // fintech-style color
+    }
+  
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+  
+    small {
+      color: #555;
+    }
+  }
+  
+  .status-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem 0;
+    gap: 0.5rem;
+  
+    &.error {
+      color: #d32f2f;
+    }
+  }
+  
